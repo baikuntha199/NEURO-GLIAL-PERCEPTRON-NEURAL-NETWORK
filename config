@@ -1,0 +1,65 @@
+```yaml
+sim:
+  T_ms: 1000
+  dt: 0.025
+  seed: 42
+
+mode:
+  neuron: bio         # bio | adex | lif | rate
+  glia_scope: neuron  # neuron | layer
+
+neuron:
+  C: 1.0
+  gNa: 120.0
+  gK: 36.0
+  gL: 0.3
+  ENa: 50.0
+  EK: -77.0
+  EL: -54.4
+  gCa: 0.5
+  ECa: 120.0
+  gKCa: 2.0
+  Ca_rest: 0.05
+  tau_Ca: 80.0
+  alpha_Ca: 0.002
+  Kd_KCa: 0.3
+
+geometry:
+  soma_area_cm2: 1.0e-5
+  dend_area_cm2: 2.0e-5
+  g_axial_mScm2: 0.5
+
+synapses:
+  ampa:  { w_nS: 0.8, tau_ms: 5 }
+  nmda:  { w_nS: 0.15, tau_rise: 5, tau_decay: 80, mg_mM: 1.0 }
+  gabaA: { w_nS: 0.7, tau_ms: 10, E_mV: -70 }
+  gabaB: { w_nS: 0.3, tau_rise: 50, tau_decay: 200, E_mV: -95 }
+
+stp:
+  enabled: true
+  U: 0.3
+  tau_rec: 600
+  tau_fac: 0
+
+glia:
+  enabled: true
+  tau_ip3: 500
+  tau_ca: 800
+  k_syn: 0.015
+  k_ip3: 0.02
+  theta: 0.15
+  slope: 0.08
+  ca_noise: 0.0005
+  pre_exc_gain: -0.35
+  pre_inh_gain: 0.10
+  post_exc_gain: -0.25
+  post_inh_gain: 0.20
+
+layer:
+  n_layers: 2
+  n_neurons: 200
+  p_connect: 0.15
+
+decoder:
+  window_ms: 50
+  train_frac: 0.6
