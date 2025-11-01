@@ -1,0 +1,7 @@
+
+  author       = {Panigrahi, Baikuntha},
+  title        = {NEURO-GLIAL-PERCEPTRON-NEURAL-NETWORK},
+  year         = {2025},
+  version      = {0.1},
+  url          = {https://github.com/USERNAME/neuroglia.net},
+  note         = {Hodgkin-Huxley neurons, NMDA, GABA-A/B, short-term plasticity, astrocyte Ca$^{2+}$ reservoir}
